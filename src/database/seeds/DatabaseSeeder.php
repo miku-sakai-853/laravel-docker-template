@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // TodoSeeder.phpで作成したクラスをcall()メソッドに登録することで実行可能になる
         $this->call([
             TodoSeeder::class,
         ]);
