@@ -50,7 +50,7 @@ public function edit($id)
     return view('todo.edit', ['todo' => $todo]);
 }
 
-public function update(TodoRequest $request, $id)
+public function update($id)
 {
     $inputs = $request->all();
 
@@ -58,5 +58,13 @@ public function update(TodoRequest $request, $id)
     $todo->fill($inputs)->save();
 
     return redirect()->route('todo.show', $todo->id);
+}
+
+public function delete($id)
+{
+    $todo = $this->todo->find($id);
+    $todo->delete();
+
+    return redirect()->route('todo.index');
 }
 }
