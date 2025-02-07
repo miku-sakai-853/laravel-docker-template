@@ -50,7 +50,7 @@ public function edit($id)
     return view('todo.edit', ['todo' => $todo]);
 }
 
-public function update($id)
+public function update(TodoRequest $request, $id)
 {
     $inputs = $request->all();
 
